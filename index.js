@@ -1,46 +1,7 @@
 //
-//	DATA
+//	This object is the link with all the test that we can perform.
 //
-let data = {
-	number: '10',
-	string: "David",
-	comparason: 324252,
-	notest: "Skip",
-	deep: {
-		name: "David",
-		age: 34
-	}
-}
-
-//
-//	TEST
-//
-let test = {
-	number: {
-		type: "string",
-		regexp: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",
-		biggerThen: 4,
-		smallerThen: 10,
-		inclusion: [9, 'ewewe']
-	},
-	string: {
-		type: "string"
-	},
-	comparason: 324252,
-	deep: {
-		name: {
-			type: "string"
-		},
-		age: {
-			biggerThen: 18
-		}
-	}
-}
-
-//
-//
-//
-let mastrObject = {
+let master_obj = {
 	type,
 	length,
 	regexp,
@@ -49,16 +10,17 @@ let mastrObject = {
 	inclusion
 }
 
-research(data, test);
-
-function research(data, test) {
-
+//
+//	Take the data and the JSON validation an test if the data matches the
+//	restrictions.
+//
+let main = function(data, test)
+{
 	//
-	//	Loop over the whole loop
+	//	Recursively loop over the data structure.
 	//
 	for(let key in data)
 	{
-
 		//
 		//	IF: 	the test is an object, this means that we have some
 		//			extra rules to compare.
@@ -68,20 +30,20 @@ function research(data, test) {
 		//
 		if(typeof(data[key]) == 'object')
 		{
-			research(data[key], test[key])
+			main(data[key], test[key]);
 		}
 		else
 		{
 			if(test[key])
 			{
-				for(let functionName in test[key])
+				for(let function_name in test[key])
 				{
-					let result = mastrObject[functionName](
+					let result = master_obj[function_name](
 									data[key],
-									test[key][functionName]
+									test[key][function_name]
 								);
 
-					console.log("%s %s is %s", key, functionName, result);
+					console.log("%s %s is %s", key, function_name, result);
 				}
 			}
 			else
@@ -95,9 +57,21 @@ function research(data, test) {
 				}
 			}
 		}
-
 	}
 }
+
+//
+//	Export the main function for others to use.
+//
+module.exports = main;
+
+//	 ______  _    _  _   _   _____  _______  _____  ____   _   _   _____
+//	|  ____|| |  | || \ | | / ____||__   __||_   _|/ __ \ | \ | | / ____|
+//	| |__   | |  | ||  \| || |        | |     | | | |  | ||  \| || (___
+//	|  __|  | |  | || . ` || |        | |     | | | |  | || . ` | \___ \
+//	| |     | |__| || |\  || |____    | |    _| |_| |__| || |\  | ____) |
+//	|_|      \____/ |_| \_| \_____|   |_|   |_____|\____/ |_| \_||_____/
+//
 
 //
 //	Test the type
@@ -109,7 +83,7 @@ function type(data, test)
 		return true;
 	}
 
-	return false
+	return false;
 }
 
 //

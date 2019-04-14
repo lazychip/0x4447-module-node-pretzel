@@ -1,0 +1,48 @@
+{
+  "name": "@0x4447/pretzel",
+  "version": "1.0.0",
+  "description": "🥨 Recursive JSON data validation.",
+  "homepage": "https://0x4447.com/toolbox",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm 0x4447-pretzel-* && npm pack && npm install -g 0x4447-pretzel-* && rm 0x4447-pretzel-*",
+    "build-windows": "npm link",
+    "lint": "eslint . --ignore-pattern test",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0x4447/0x4447-cli-node-pretzel"
+  },
+  "files": [
+    "index.js"
+  ],
+  "author": {
+    "name": "0x4447",
+    "email": "hello@0x4447.email",
+    "url": "https://0x4447.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0x4447/0x4447-cli-node-pretzel/issues"
+  },
+  "keywords": [
+    "0x4447",
+    "cli",
+    "nodejs",
+    "validation",
+    "recursive validation"
+    "recursive"
+  ],
+  "dependencies": {
+    "chai": "^4.2.0",
+    "commander": "2.15.1",
+    "mocha": "5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  }
+}
