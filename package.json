@@ -34,15 +34,12 @@
     "cli",
     "nodejs",
     "validation",
-    "recursive validation"
+    "recursive validation",
     "recursive"
   ],
   "dependencies": {
     "chai": "^4.2.0",
-    "commander": "2.15.1",
-    "mocha": "5.1.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.9.0"
+    "commander": "^2.20.0",
+    "mocha": "^6.1.4"
   }
 }

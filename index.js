@@ -7,57 +7,78 @@ let master_obj = {
 	regexp,
 	biggerThen,
 	smallerThen,
-	inclusion
+	includes,
+	comparison
 }
 
 //
 //	Take the data and the JSON validation an test if the data matches the
 //	restrictions.
 //
-let main = function(data, test)
+let main = function(data, test, error)
 {
 	//
-	//	Recursively loop over the data structure.
+	//	1.	This array will hold all the errors that were found.
+	//
+	let error_result = error || [];
+
+	//
+	//	2.	Start the recursive loop.
 	//
 	for(let key in data)
 	{
 		//
-		//	IF: 	the test is an object, this means that we have some
+		//	IF: 	The test is an object, this means that we have some
 		//			extra rules to compare.
 		//
-		//	ELSE: 	it is a regular value, and in that case we take that
+		//	ELSE: 	It is a regular value, and in that case we take that
 		//			value and compare it with the data as is.
 		//
 		if(typeof(data[key]) == 'object')
 		{
-			main(data[key], test[key]);
+			main(data[key], test[key], error_result);
 		}
 		else
 		{
-			if(test[key])
+			for(let function_name in test[key])
 			{
-				for(let function_name in test[key])
-				{
-					let result = master_obj[function_name](
-									data[key],
-									test[key][function_name]
-								);
+				//
+				//	1.	Run the test.
+				//
+				let result = master_obj[function_name](
+								data[key],
+								test[key][function_name]
+							);
 
-					console.log("%s %s is %s", key, function_name, result);
-				}
-			}
-			else
-			{
 				//
-				//	Simple comparison of values.
+				//	2.	By default we set the test type as is.
 				//
-				if(data[key] == test[key])
+				let test_type = test[key];
+
+				//
+				//	3.	But if we are dealing with a type comparison, we
+				//		need to get to it.
+				//
+				if(test[key].type)
 				{
-					console.log("%s is ok", key);
+					test_type = test[key].type
+				}
+
+				//
+				//	4.	Push to the array result the test that failed.
+				//
+				if(!result)
+				{
+					error_result.push({
+						variable: key,
+						test: test_type
+					})
 				}
 			}
 		}
 	}
+
+	return error_result;
 }
 
 //
@@ -128,7 +149,7 @@ function smallerThen(data, test)
 //
 //	Look if a value exists within an array of possibilities
 //
-function inclusion(data, test)
+function includes(data, test)
 {
 	let findings = test.find(function(subject) {
 
@@ -152,6 +173,19 @@ function regexp(data, test)
 	let re = new RegExp(test);
 
 	if(re.exec(data))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+//
+//	Test data against a regular expression
+//
+function comparison(data, test)
+{
+	if(data == test)
 	{
 		return true;
 	}
