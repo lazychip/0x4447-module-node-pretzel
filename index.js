@@ -70,8 +70,7 @@ let main = function(data, test, error)
 				if(!result)
 				{
 					error_result.push({
-						variable: key,
-						test: test_type
+						variable: key
 					})
 				}
 			}

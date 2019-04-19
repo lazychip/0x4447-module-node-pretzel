@@ -45,9 +45,11 @@ describe('Recursive Is', function() {
 		let result = pretzel(data, rules);
 
 		//
-		//	1.	Check if we got an array.
+		//	2.	Check if we got an array.
 		//
-		expect(result).to.be.an('array').that.is.empty;
+		expect(result)
+			.to.be.an('array')
+			.that.is.empty;
 
 		//
 		//	-> Tell chai that we are done with our test.
@@ -82,13 +84,13 @@ describe('Recursive Is not', function() {
 		//
 		let result = pretzel(data, rules);
 
-		console.log(result)
 		//
 		//	2.	We should have gotten back and array with what is wrong.
 		//
-		expect(result[0])
-			.to.be.an('object')
-			.to.include({ variable: 'values'});
+		expect(result)
+			.to.be.an('array')
+			.to.deep.include({variable: "state"})
+			.to.deep.include({variable: "country"});
 
 		//
 		//	-> Tell chai that we are done with our test.

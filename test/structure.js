@@ -27,7 +27,9 @@ describe('Structure', function() {
 		//
 		//	2.	Check if we got an array.
 		//
-		expect(result).to.be.a('array');
+		expect(result)
+			.to.be.an('array')
+			.that.is.empty;
 
 		//
 		//	-> Tell chai that we are done with our test.

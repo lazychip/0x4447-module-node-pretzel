@@ -27,9 +27,11 @@ describe('David Is', function() {
 		let result = pretzel(data, rules);
 
 		//
-		//	1.	Check if we got an array.
+		//	2.	Check if we got an array.
 		//
-		expect(result).to.be.an('array').that.is.empty;
+		expect(result)
+			.to.be.an('array')
+			.that.is.empty;
 
 		//
 		//	-> Tell chai that we are done with our test.
@@ -59,9 +61,9 @@ describe('1 Is not', function() {
 		//
 		//	2.	We should have gotten back and array with what is wrong.
 		//
-		expect(result[0])
-			.to.be.an('object')
-			.to.include({ variable: 'name', test: 'string' });
+		expect(result)
+			.to.be.an('array')
+			.to.deep.include({ variable: 'name' });
 
 		//
 		//	-> Tell chai that we are done with our test.

@@ -27,9 +27,11 @@ describe('1 Is', function() {
 		let result = pretzel(data, rules);
 
 		//
-		//	1.	Check if we got an array.
+		//	2.	Check if we got an array.
 		//
-		expect(result).to.be.an('array').that.is.empty;
+		expect(result)
+			.to.be.an('array')
+			.that.is.empty;
 
 		//
 		//	-> Tell chai that we are done with our test.
