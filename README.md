@@ -1,6 +1,106 @@
-# 0x4447-cli-node-Pretzel
+# 🥨 Pretzel
 
-🥨 Recursive JSON data validation.
+Pretzel is a recursive JSON data validation, created out of frustration since there are no npm modules that can recursively validate a JSON object with multiple nested values objects.
+
+We are aware of Validate.js, but as the author explains, the [support for complete object is very basic](https://validatejs.org/#validate-nested). We did consider proposing a PR to the project, but the source code turned out to be to hard to rezone about, and thus Pretzel was born.
+
+The goal of this tools is not only to handle nested JSON files like this:
+
+```
+{
+	first_name: 'David',
+	last_name: 'Gatti',
+	age: 99,
+	address: {
+		street: 'Wonder Land',
+		nr: 55,
+		state: 'TX',
+		country: 'United States'
+	}
+}
+```
+
+With rules structured this way:
+
+```
+{
+	first_name: {
+		type: 'string'
+	},
+	last_name: {
+		regexp: '[a-zA-Z]'
+	},
+	age: {
+		type: 'number'
+	},
+	address: {
+		street: {
+			type: 'string'
+		},
+		nr: {
+			type: 'number'
+		},
+		state: {
+			includes: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+		},
+		country: {
+			includes: ['United States', 'Canada']
+		}
+	}
+}
+```
+
+but we also wanted to make sure the source code is a simple to understand. If you check the `index.js` file you'll see that we mean.
+
+# How to Install
+
+```
+] sudo npm install -g @0x4447/pretzel
+```
+
+# How to Test
+
+```
+] npm run test
+```
+
+# How to Require
+
+```
+let pretzel = require('pretzel');
+```
+
+# How to Use
+```
+//
+//	RULES
+//
+let rules = {
+	name: {
+		type: "string"
+	}
+};
+
+//
+//	DATA
+//
+let data = {
+	name: '0x4447'
+};
+
+//
+//	1.	Execute on the function.
+//
+let result = pretzel(data, rules);
+
+//
+//	2.	Check if the array that we got back has something in it.
+//
+if(result.length)
+{
+	console.info(result);
+}
+```
 
 # The End
 
