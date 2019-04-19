@@ -50,7 +50,7 @@ With rules structured this way:
 }
 ```
 
-but we also wanted to make sure the source code is a simple to understand. If you check the `index.js` file you'll see that we mean.
+We also wanted to make sure the source code is a simple to understand. If you check the `index.js` file you'll see that we mean. We hope that his way you can learn something or modify the code to suits your needs.
 
 # How to Install
 
