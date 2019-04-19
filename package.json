@@ -39,7 +39,6 @@
   ],
   "dependencies": {
     "chai": "^4.2.0",
-    "commander": "^2.20.0",
     "mocha": "^6.1.4"
   }
 }
