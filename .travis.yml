@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- 11
+script:
+- npm test
+deploy:
+  provider: npm
+  email: npm@gatti.email
+  api_key:
+    secure: NyROxeHy4UjT51RSBK3P2NIIwQZZuvVtWHuPUgbXg+YjqR1l76X6oLt/4KUsaKodbI+54Q3tdqDqaDhkA4hq0lSIdGIFQDTGdpyfmlcB9LTfSl7HFtoIYaZJLS09PxkpERlcIQU8iHwb4p9e+0KyfDSLo5+C/4SyWyJ0UJTS0jr0qUonMLe55fNAwo9bHm+5C5YCDUXQjH2Yd2q0/PBIAlVF7wvjLWsmJxkZpAA8+qqrEL9y/worO5ySVPrtDEc33QN2w6GWFZg5Wjbfl0t/5T6KRiO15adHArSvQG05XIbiNcSUTPaS3CXLluYpxHUnoO8Qafat9+dz82gsE0goFURO1H8IwoGAnjavyVsH6/pW4+3JoucJMR9sjHZh4geb0I0DuE+brir4q4AxGMP9AxMtV2zyBfZxH52Keof/Un45DXc1T2pwIisMST3RCcyKUsHByV1egPN5nCgwefEedWkuK7ec+t16dXFyFx/IYnja1/zXo/4mVEuq8HH5fW84PGDW8wLWLBFtvbnbLVTcHIvza53n3RSUks7MBD2tCTaZQx/wZRc2x1dU4DZBrxIa4lFtkllYG9foiAjkWDsvmzyGlcDmabIe3oks9utVauf6Rfc/gmun6Yg9VFEYXzyWhBkd2zhxdF+SzECYbqBNHavIuFaMTOsAfJuNmQ1kQDY=
+  on:
+    tags: false
+    branch: master
+    repo: 0x4447/0x4447-module-node-pretzel
+    node_js: '11'
