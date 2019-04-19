@@ -105,6 +105,7 @@ if(result.length)
 
 Bellow you can find a list of all the rules support by the module at this time.
 
+### Bigger then
 
 ```
 {
@@ -112,11 +113,15 @@ Bellow you can find a list of all the rules support by the module at this time.
 }
 ```
 
+### Comparison
+
 ```
- {
+{
 	comparison: 1
 }
 ```
+
+### Includes
 
 ```
 {
@@ -124,11 +129,15 @@ Bellow you can find a list of all the rules support by the module at this time.
 }
 ```
 
+### Regular Expression
+
 ```
 {
 	regexp: '[aAzZ.-]'
 }
 ```
+
+### Smaller then
 
 ```
 {
@@ -136,27 +145,11 @@ Bellow you can find a list of all the rules support by the module at this time.
 }
 ```
 
-```
-{
-	type: "string"
-}
-```
+### Type
 
 ```
 {
-	type: "number"
-}
-```
-
-```
-{
-	type: "object"
-}
-```
-
-```
-{
-	type: "array"
+	type: "string || number || object || array"
 }
 ```
 
