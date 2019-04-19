@@ -101,6 +101,64 @@ if(result.length)
 	console.info(result);
 }
 ```
+# Rules
+
+Bellow you can find a list of all the rules support by the module at this time.
+
+
+```
+{
+	biggerThen: 5
+}
+```
+
+```
+ {
+	comparison: 1
+}
+```
+
+```
+{
+	includes: [9, '0x4447']
+}
+```
+
+```
+{
+	regexp: '[aAzZ.-]'
+}
+```
+
+```
+{
+	smallerThen: 5
+}
+```
+
+```
+{
+	type: "string"
+}
+```
+
+```
+{
+	type: "number"
+}
+```
+
+```
+{
+	type: "object"
+}
+```
+
+```
+{
+	type: "array"
+}
+```
 
 # The End
 
