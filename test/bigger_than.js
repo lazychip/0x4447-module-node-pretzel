@@ -1,5 +1,5 @@
 let pretzel = require('../index');
-let expect = require('chai').expect
+let expect = require('chai').expect;
 
 //
 //	RULES
@@ -8,7 +8,7 @@ let rules = {
 	nr: {
 		biggerThen: 5
 	}
-}
+};
 
 describe('6 Is', function() {
 
@@ -19,7 +19,7 @@ describe('6 Is', function() {
 		//
 		let data = {
 			nr: 6
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
@@ -51,7 +51,7 @@ describe('4 Is not', function() {
 		//
 		let data = {
 			nr: 4
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
@@ -63,7 +63,9 @@ describe('4 Is not', function() {
 		//
 		expect(result[0])
 			.to.be.an('object')
-			.to.include({ variable: 'nr'});
+			.to.include({
+				variable: 'nr'
+			});
 
 		//
 		//	-> Tell chai that we are done with our test.

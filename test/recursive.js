@@ -1,16 +1,26 @@
 let pretzel = require('../index');
-let expect = require('chai').expect
+let expect = require('chai').expect;
 
 //
 //	RULES
 //
 let rules = {
-	first_name: { type: 'string' },
-	last_name: { regexp: '[a-zA-Z]' },
-	age: { type: 'number' },
+	first_name: {
+		type: 'string'
+	},
+	last_name: {
+		regexp: '[a-zA-Z]'
+	},
+	age: {
+		type: 'number'
+	},
 	address: {
-		street: { type: 'string' },
-		nr: { type: 'number' },
+		street: {
+			type: 'string'
+		},
+		nr: {
+			type: 'number'
+		},
 		state: {
 			includes: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
 		},
@@ -18,7 +28,7 @@ let rules = {
 			includes: ['United States', 'Canada']
 		}
 	}
-}
+};
 
 describe('Recursive Is', function() {
 
@@ -37,7 +47,7 @@ describe('Recursive Is', function() {
 				state: 'TX',
 				country: 'United States'
 			}
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
@@ -77,7 +87,7 @@ describe('Recursive Is not', function() {
 				state: 'XX',
 				country: 'Italy'
 			}
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
@@ -89,8 +99,12 @@ describe('Recursive Is not', function() {
 		//
 		expect(result)
 			.to.be.an('array')
-			.to.deep.include({variable: "state"})
-			.to.deep.include({variable: "country"});
+			.to.deep.include({
+				variable: "state"
+			})
+			.to.deep.include({
+				variable: "country"
+			});
 
 		//
 		//	-> Tell chai that we are done with our test.

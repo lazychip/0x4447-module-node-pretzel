@@ -9,7 +9,7 @@ let master_obj = {
 	smallerThen,
 	includes,
 	comparison
-}
+};
 
 //
 //	Take the data and the JSON validation an test if the data matches the
@@ -34,7 +34,7 @@ let main = function(data, test, error)
 		//	ELSE: 	It is a regular value, and in that case we take that
 		//			value and compare it with the data as is.
 		//
-		if(typeof(data[key]) == 'object')
+		if(typeof (data[key]) === 'object')
 		{
 			main(data[key], test[key], error_result);
 		}
@@ -46,9 +46,9 @@ let main = function(data, test, error)
 				//	1.	Run the test.
 				//
 				let result = master_obj[function_name](
-								data[key],
-								test[key][function_name]
-							);
+					data[key],
+					test[key][function_name]
+				);
 
 				//
 				//	2.	By default we set the test type as is.
@@ -61,7 +61,7 @@ let main = function(data, test, error)
 				//
 				if(test[key].type)
 				{
-					test_type = test[key].type
+					test_type = test[key].type;
 				}
 
 				//
@@ -71,14 +71,14 @@ let main = function(data, test, error)
 				{
 					error_result.push({
 						variable: key
-					})
+					});
 				}
 			}
 		}
 	}
 
 	return error_result;
-}
+};
 
 //
 //	Export the main function for others to use.
@@ -98,7 +98,7 @@ module.exports = main;
 //
 function type(data, test)
 {
-	if(typeof(data) == test)
+	if(typeof (data) === test)
 	{
 		return true;
 	}

@@ -1,5 +1,5 @@
 let pretzel = require('../index');
-let expect = require('chai').expect
+let expect = require('chai').expect;
 
 //
 //	RULES
@@ -8,7 +8,7 @@ let rules = {
 	name: {
 		type: "string"
 	}
-}
+};
 
 describe('David Is', function() {
 
@@ -19,7 +19,7 @@ describe('David Is', function() {
 		//
 		let data = {
 			name: 'David'
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
@@ -51,7 +51,7 @@ describe('1 Is not', function() {
 		//
 		let data = {
 			name: 1
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
@@ -63,7 +63,9 @@ describe('1 Is not', function() {
 		//
 		expect(result)
 			.to.be.an('array')
-			.to.deep.include({ variable: 'name' });
+			.to.deep.include({
+				variable: 'name'
+			});
 
 		//
 		//	-> Tell chai that we are done with our test.

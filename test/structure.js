@@ -1,12 +1,12 @@
 let pretzel = require('../index');
-let expect = require('chai').expect
+let expect = require('chai').expect;
 
 //
 //	RULES
 //
 let rules = {
-	comparason: 1,
-}
+	comparason: 1
+};
 
 describe('Structure', function() {
 
@@ -17,7 +17,7 @@ describe('Structure', function() {
 		//
 		let data = {
 			comparason: 1
-		}
+		};
 
 		//
 		//	1.	Execute on the function.
