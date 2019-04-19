@@ -55,7 +55,7 @@ We also wanted to make sure the source code is a simple to understand. If you ch
 # How to Install
 
 ```
-] sudo npm install -g @0x4447/pretzel
+] npm install @0x4447/pretzel
 ```
 
 # How to Test
