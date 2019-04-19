@@ -6,13 +6,13 @@ let expect = require('chai').expect;
 //
 let rules = {
 	nr: {
-		includes: [9, 'David']
+		includes: [9, '0x4447']
 	}
 };
 
 describe('9 Is', function() {
 
-	it('Included in [9, "David"]', function(done) {
+	it('Included in [9, "0x4447"]', function(done) {
 
 		//
 		//	DATA
@@ -44,7 +44,7 @@ describe('9 Is', function() {
 
 describe('10 Is not', function() {
 
-	it('Included in [9, "David"]', function(done) {
+	it('Included in [9, "0x4447"]', function(done) {
 
 		//
 		//	DATA
@@ -76,15 +76,15 @@ describe('10 Is not', function() {
 
 });
 
-describe('David Is', function() {
+describe('0x4447 Is', function() {
 
-	it('Included in [9, "David"]', function(done) {
+	it('Included in [9, "0x4447"]', function(done) {
 
 		//
 		//	DATA
 		//
 		let data = {
-			nr: 'David'
+			nr: '0x4447'
 		};
 
 		//
@@ -108,7 +108,7 @@ describe('David Is', function() {
 
 describe('Bob Is not', function() {
 
-	it('Included in [9, "David"]', function(done) {
+	it('Included in [9, "0x4447"]', function(done) {
 
 		//
 		//	DATA
