@@ -111,7 +111,7 @@ function type(data, test)
 //
 function length(data, test)
 {
-	if(data.toString().length == test)
+	if(data.toString().length === test)
 	{
 		return true;
 	}
@@ -169,9 +169,9 @@ function includes(data, test)
 //
 function regexp(data, test)
 {
-	let re = new RegExp(test);
+	let regular_expression = new RegExp(test);
 
-	if(re.exec(data))
+	if(regular_expression.exec(data))
 	{
 		return true;
 	}
@@ -180,11 +180,11 @@ function regexp(data, test)
 }
 
 //
-//	Test data against a regular expression
+//	Compare two values and see if they are identical.
 //
 function comparison(data, test)
 {
-	if(data == test)
+	if(data === test)
 	{
 		return true;
 	}
