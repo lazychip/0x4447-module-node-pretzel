@@ -1,6 +1,6 @@
 # 🥨 Pretzel
 
-Pretzel is a recursive JSON data validation, created out of frustration since there are no npm modules that can recursively validate a JSON object with multiple nested values objects.
+Pretzel is a recursive JSON data validation, created after realizing that there are no npm modules that can recursively validate a JSON object with multiple nested values objects.
 
 We are aware of Validate.js, but as the author explains, the [support for complete object is very basic](https://validatejs.org/#validate-nested). We did consider proposing a PR to the project, but the source code turned out to be to hard to rezone about, and thus Pretzel was born.
 
@@ -50,7 +50,7 @@ With rules structured this way:
 }
 ```
 
-We also wanted to make sure the source code is a simple to understand. If you check the `index.js` file you'll see that we mean. We hope that his way you can learn something or modify the code to suits your needs.
+We also wanted to make sure the source code is a simple to understand as possible. If you check the `index.js` file you'll see what we mean – use it, modify it, learn from it.
 
 # How to Install
 
