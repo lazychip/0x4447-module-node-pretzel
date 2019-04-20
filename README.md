@@ -83,24 +83,31 @@ let rules = {
 };
 
 //
-//	DATA
+//	Good DATA
 //
-let data = {
+let good_data = {
 	name: '0x4447'
+};
+
+//
+//	Bad DATA
+//
+let bad_data = {
+	name: 123321
 };
 
 //
 //	1.	Execute on the function.
 //
-let result = pretzel(data, rules);
+let good = pretzel(good_data, rules);
+let bad = pretzel(bad_data, rules);
 
 //
-//	2.	Check if the array that we got back has something in it.
+//	2.	Check what we've got.
 //
-if(result.length)
-{
-	console.info(result);
-}
+console.info(good);
+console.info(bad);
+
 ```
 # Rules
 
