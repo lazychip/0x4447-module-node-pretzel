@@ -6,7 +6,7 @@ We are aware of Validate.js, but as the author explains, the [support for comple
 
 The goal of this tools is not only to handle nested JSON files like this:
 
-```
+```javascript
 {
 	first_name: 'David',
 	last_name: 'Gatti',
@@ -22,7 +22,7 @@ The goal of this tools is not only to handle nested JSON files like this:
 
 With rules structured this way:
 
-```
+```javascript
 {
 	first_name: {
 		type: 'string'
@@ -71,7 +71,8 @@ let pretzel = require('pretzel');
 ```
 
 # How to Use
-```
+
+```javascript
 //
 //	RULES
 //
@@ -107,7 +108,7 @@ Bellow you can find a list of all the rules support by the module at this time.
 
 ### Bigger then
 
-```
+```javascript
 {
 	biggerThen: 5
 }
@@ -115,7 +116,7 @@ Bellow you can find a list of all the rules support by the module at this time.
 
 ### Comparison
 
-```
+```javascript
 {
 	comparison: 1
 }
@@ -123,7 +124,7 @@ Bellow you can find a list of all the rules support by the module at this time.
 
 ### Includes
 
-```
+```javascript
 {
 	includes: [9, '0x4447']
 }
@@ -131,7 +132,7 @@ Bellow you can find a list of all the rules support by the module at this time.
 
 ### Regular Expression
 
-```
+```javascript
 {
 	regexp: '[aAzZ.-]'
 }
@@ -139,7 +140,7 @@ Bellow you can find a list of all the rules support by the module at this time.
 
 ### Smaller then
 
-```
+```javascript
 {
 	smallerThen: 5
 }
@@ -147,7 +148,7 @@ Bellow you can find a list of all the rules support by the module at this time.
 
 ### Type
 
-```
+```javascript
 {
 	type: "string || number || object || array"
 }
